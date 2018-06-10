@@ -15,6 +15,10 @@ import pageWrapper from '../src/hoc/pageWrapper';
 import withI18next from '../src/hoc/withI18next';
 import Helmet from 'react-helmet';
 
+interface IProps {
+  t(x: string): string;
+}
+
 export interface ITodoState {
   title: string;
   todos: Todo[];
@@ -27,9 +31,10 @@ export interface ITodoDispatch {
   setDone(i: number): void;
 }
 
-export type ITodoProps = ITodoState & ITodoDispatch;
+export type ITodoProps = IProps & ITodoState & ITodoDispatch;
 
 const TodoView: React.StatelessComponent<ITodoProps> = ({
+  t,
   title,
   todos,
   loading,
@@ -42,6 +47,7 @@ const TodoView: React.StatelessComponent<ITodoProps> = ({
       title={`To do List!`}
       meta={[{ property: 'og:title', content: title }]}
     />
+    <h1>{t('pureComponent')}</h1>
     <h1 className="index__header">Todo app</h1>
     <form className="index__form" onSubmit={e => e.preventDefault()}>
       <label className="index__form__label" htmlFor="newtodo">
