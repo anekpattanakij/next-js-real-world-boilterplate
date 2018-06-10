@@ -1,0 +1,6 @@
+{
+  "watch": ["src/**/*.ts","src/**/*.tsx", "locales/**/*.json"],
+  "execMap": {
+    "ts": "ts-node --compilerOptions \"{\\\"module\\\":\\\"commonjs\\\"}\"" 
+  }
+}
