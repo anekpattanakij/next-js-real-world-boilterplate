@@ -13,6 +13,7 @@ import {
 import { State } from '../src/redux/reducer';
 import pageWrapper from '../src/hoc/pageWrapper';
 import withI18next from '../src/hoc/withI18next';
+import Helmet from 'react-helmet';
 
 export interface ITodoState {
   title: string;
@@ -37,7 +38,10 @@ const TodoView: React.StatelessComponent<ITodoProps> = ({
   setDone,
 }) => (
   <main className="index">
-    {loading && <Loader />}
+    <Helmet
+      title={`To do List!`}
+      meta={[{ property: 'og:title', content: title }]}
+    />
     <h1 className="index__header">Todo app</h1>
     <form className="index__form" onSubmit={e => e.preventDefault()}>
       <label className="index__form__label" htmlFor="newtodo">
