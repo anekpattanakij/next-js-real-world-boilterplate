@@ -11,7 +11,8 @@ import {
   dispatchSetDoneSuccess,
 } from '../src/redux/module/TodoReducer';
 import { State } from '../src/redux/reducer';
-import pageWrapper from '../src/hoc/pageWrapper';
+import PageWrapper from '../src/hoc/pageWrapper';
+
 import withI18next from '../src/hoc/withI18next';
 import Helmet from 'react-helmet';
 
@@ -88,7 +89,7 @@ const dispatchToProps = (dispatch: Dispatch): ITodoDispatch => ({
   },
 });
 //setTitle, saveTodo, setDone
-export default pageWrapper(['common'])(
+export default PageWrapper(['common'])(
   connect(
     stateToProps,
     dispatchToProps,
