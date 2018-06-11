@@ -33,8 +33,8 @@ const options: InitOptions = {
 };
 
 export const languageDetector = new i18nextMiddleware.LanguageDetector(null, {
-    order: ['querystring'],
-    lookupQuerystring: 'lang',
+  order: ['path'],
+  lookupFromPathIndex: 0,
 });
 
 const i18nInstance: i18n.i18n = i18n;

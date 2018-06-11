@@ -19,8 +19,8 @@ const staticDir = join(__dirname, '../static');
 const rootStaticFiles = fs.readdirSync(staticDir).map(name => `/${name}`);
 
 export const languageDetector = new i18nextMiddleware.LanguageDetector(null, {
-  order: ['querystring'],
-  lookupQuerystring: 'lang',
+  order: ['path'],
+  lookupFromPathIndex: 0,
 });
 
 i18nInstance
@@ -54,8 +54,16 @@ i18nInstance
         const pathIntercepter = (req, res, next) => {
           // Put the preprocessing here.
           const pathname = req.url;
-          if (pathname === '/c') {
-            req.url = '/a';
+          try {
+            const languageInPath = pathname.substr(
+              1,
+              pathname.indexOf('/', 1) - 1,
+            );
+            if (Config.i18n.whitelist.indexOf(languageInPath) >= 0) {
+              req.url = pathname.substr(pathname.indexOf('/', 1));
+            }
+          } catch (err) {
+            // Do Nothing
           }
           next();
         };
