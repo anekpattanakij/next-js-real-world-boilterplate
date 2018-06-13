@@ -11,7 +11,7 @@ import { i18nInstance } from '../i18n/i18n';
 const DEFUALT_PORT = 3000;
 
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+const app = next({ dir: './src', dev });
 const handle = app.getRequestHandler();
 
 // list static files

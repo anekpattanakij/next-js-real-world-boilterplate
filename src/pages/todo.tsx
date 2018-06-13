@@ -1,26 +1,28 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import Todo from '../src/common/Todo';
-import TodoComponent from '../src/components/TodoComponent';
-import Button from '../src/components/Button';
-import Loader from '../src/components/Loader';
+import Todo from '../common/Todo';
+import TodoComponent from '../components/TodoComponent';
+import Button from '../components/Button';
+import Loader from '../components/Loader';
 import {
   dispatchSetTitle,
   dispatchSaveTodoSuccess,
   dispatchSetDoneSuccess,
-} from '../src/redux/module/TodoReducer';
-import { State } from '../src/redux/reducer';
-import PageWrapper from '../src/hoc/pageWrapper';
+} from '../redux/module/TodoReducer';
+import { State } from '../redux/reducer';
+import PageWrapper from '../hoc/pageWrapper';
 
-import withI18next from '../src/hoc/withI18next';
+import withI18next from '../hoc/withI18next';
 import Helmet from 'react-helmet';
+import i18n from 'i18next';
 
 interface IProps {
   t(x: string): string;
 }
 
 export interface ITodoState {
+  i18n: i18n.i18n;
   title: string;
   todos: Todo[];
   loading: boolean;
@@ -48,6 +50,7 @@ const TodoView: React.StatelessComponent<ITodoProps> = ({
       title={`To do List!`}
       meta={[{ property: 'og:title', content: title }]}
     />
+    <h1>Current language is {i18n.language}</h1>
     <h1>{t('pureComponent')}</h1>
     <h1 className="index__header">Todo app</h1>
     <form className="index__form" onSubmit={e => e.preventDefault()}>

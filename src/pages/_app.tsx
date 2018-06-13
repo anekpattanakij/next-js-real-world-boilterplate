@@ -3,7 +3,7 @@ import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import {createStore} from 'redux';
-import ConfigStore from '../src/redux/store';
+import ConfigStore from '../redux/store';
 
 class MyApp extends App  {
   render () {

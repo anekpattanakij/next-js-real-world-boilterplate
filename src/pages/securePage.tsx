@@ -1,11 +1,11 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { State } from '../src/redux/reducer';
-import pageWrapper from '../src/hoc/pageWrapper';
-import securePageWrapper from '../src/hoc/securePageWrapper';
+import { State } from '../redux/reducer';
+import pageWrapper from '../hoc/pageWrapper';
+import securePageWrapper from '../hoc/securePageWrapper';
 
-import withI18next from '../src/hoc/withI18next';
+import withI18next from '../hoc/withI18next';
 import Helmet from 'react-helmet';
 
 interface IProps {
