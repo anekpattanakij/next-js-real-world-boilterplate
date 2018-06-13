@@ -2,17 +2,18 @@ import React from 'react';
 
 interface IProps {
     query:any;
-    id:string;
+    fiction:string;
+    chapter:string;
   }
 
 export default class extends React.Component<IProps> {
-  static getInitialProps ({ query: { id } }) {
-    return { id };
+  static getInitialProps ({ query: { fiction,chapter } }) {
+    return { fiction,chapter };
   }
 
   render () {
     return ( <div>
-      <h1>My {this.props.id} blog post</h1>
+      <h1>This is content for fiction  {this.props.fiction} and chapter {this.props.chapter}</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.

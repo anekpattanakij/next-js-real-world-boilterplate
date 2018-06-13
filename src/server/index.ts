@@ -51,7 +51,7 @@ i18nInstance
           i18nextMiddleware.missingKeyHandler(i18nInstance),
         );
 
-        const pathIntercepter = (req, res, next) => {
+        const languagePathIntercepter = (req, res, next) => {
           // Put the preprocessing here.
           const pathname = req.url;
           try {
@@ -68,7 +68,45 @@ i18nInstance
           next();
         };
 
-        server.get('*', pathIntercepter, (req, res) => {
+        const urlParameterIntercepter = (req, res, next) => {
+          // Put the preprocessing here.
+          const pathname:string = req.url;
+          try {
+            const pathList:string[] = pathname.split('/');
+            console.log(pathList);
+            let previousPath:string;
+            let passDataQueryString:string = '';
+            let purePathWithoutNumber:string = '';
+
+            for( let i=1;i<pathList.length;i++) {
+              if( i === 0){ 
+                previousPath = pathList[i];
+              } else 
+              {
+
+                if(!isNaN(parseInt(pathList[i]))) {
+                  passDataQueryString = passDataQueryString + '&' + previousPath + '=' + pathList[i];
+                } else {
+                  previousPath = pathList[i];
+                  purePathWithoutNumber = purePathWithoutNumber + '/' + pathList[i];
+                }
+              }
+              
+            }
+            console.log('---------------------------');
+            console.log(purePathWithoutNumber);
+            console.log('---------------------------');
+            if(passDataQueryString !== '') {
+              req.url = purePathWithoutNumber +  '?'+ passDataQueryString;
+            }
+            console.log(req.url);
+          } catch (err) {
+            // Do Nothing
+          }
+          next();
+        };
+
+        server.get('*', languagePathIntercepter,urlParameterIntercepter, (req, res) => {
           const { pathname } = parse(req.url, true);
 
           // serve static files from roots
