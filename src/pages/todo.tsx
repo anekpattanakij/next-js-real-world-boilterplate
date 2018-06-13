@@ -19,10 +19,10 @@ import i18n from 'i18next';
 
 interface IProps {
   t(x: string): string;
+  i18n: i18n.i18n;
 }
 
 export interface ITodoState {
-  i18n: i18n.i18n;
   title: string;
   todos: Todo[];
   loading: boolean;
