@@ -5,7 +5,11 @@ import { Provider } from 'react-redux';
 import {createStore} from 'redux';
 import ConfigStore from '../redux/store';
 
+import withReduxSaga from 'next-redux-saga';
+import createSagaStore from '../redux-saga/store';
+
 class MyApp extends App  {
+
   render () {
     const {Component, pageProps, store} = this.props;
     return (
@@ -18,4 +22,4 @@ class MyApp extends App  {
   }
 }
 
-export default withRedux(ConfigStore)(MyApp);
+export default withRedux(createSagaStore)(withReduxSaga(MyApp));

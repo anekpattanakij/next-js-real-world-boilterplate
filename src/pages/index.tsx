@@ -1,9 +1,22 @@
 import React from 'react';
-import Link from 'next/link';
+import {connect} from 'react-redux';
 
-export default () => (
-  <ul>
-    <li><Link href="/c" as="/c"><a>a</a></Link></li>
-    <li><Link href="/a" as="/a"><a>b</a></Link></li>
-  </ul>
-);
+import {loadData, startClock, tickClock} from '../redux-saga/actions';
+import Counter from '../components/counter';
+
+interface IProps {
+    ctx:any;
+    dispatch:any;
+  }
+
+  
+class Index extends React.Component<IProps> {
+
+  render () {
+    return ( 
+        <Counter />
+    );
+  }
+}
+
+export default connect()(Index);

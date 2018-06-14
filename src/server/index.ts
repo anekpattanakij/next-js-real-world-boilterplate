@@ -73,7 +73,6 @@ i18nInstance
           const pathname:string = req.url;
           try {
             const pathList:string[] = pathname.split('/');
-            console.log(pathList);
             let previousPath:string;
             let passDataQueryString:string = '';
             let purePathWithoutNumber:string = '';
@@ -93,13 +92,9 @@ i18nInstance
               }
               
             }
-            console.log('---------------------------');
-            console.log(purePathWithoutNumber);
-            console.log('---------------------------');
             if(passDataQueryString !== '') {
               req.url = purePathWithoutNumber +  '?'+ passDataQueryString;
             }
-            console.log(req.url);
           } catch (err) {
             // Do Nothing
           }
