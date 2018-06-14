@@ -8,7 +8,13 @@ import ConfigStore from '../redux/store';
 import withReduxSaga from 'next-redux-saga';
 import createSagaStore from '../redux-saga/store';
 
-class MyApp extends App  {
+interface IProps {
+  store:any;
+  Component:any;
+  pageProps:any;
+}
+
+class MyApp extends App<IProps>  {
 
   render () {
     const {Component, pageProps, store} = this.props;
