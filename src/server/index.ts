@@ -1,4 +1,4 @@
-import { Config } from './../config';
+import { Config } from '../config';
 import * as express from 'express';
 import { parse } from 'url';
 import * as fs from 'fs';
@@ -15,7 +15,7 @@ const app = next({ dir: './src', dev });
 const handle = app.getRequestHandler();
 
 // list static files
-const staticDir = join(__dirname, '../static');
+const staticDir = join(__dirname, '../../static');
 const rootStaticFiles = fs.readdirSync(staticDir).map(name => `/${name}`);
 
 export const languageDetector = new i18nextMiddleware.LanguageDetector(null, {

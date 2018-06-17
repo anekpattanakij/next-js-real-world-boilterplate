@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Todo from '../common/Todo';
 import TodoComponent from '../components/TodoComponent';
 import Button from '../components/Button';
-import Loader from '../components/Loader';
+
 import {
   dispatchSetTitle,
   dispatchSaveTodoSuccess,
@@ -13,7 +13,6 @@ import {
 import { State } from '../redux/reducer';
 import PageWrapper from '../hoc/pageWrapper';
 
-import withI18next from '../hoc/withI18next';
 import Helmet from 'react-helmet';
 import i18n from 'i18next';
 

@@ -5,7 +5,6 @@ import * as i18n from 'i18next';
 import PureComponent from '../components/PureComponent';
 import ExtendedComponent from '../components/ExtendedComponent';
 import ComponentWithTrans from '../components/ComponentWithTrans';
-import withI18next from '../hoc/withI18next';
 
 import pageWrapper from '../hoc/pageWrapper';
 
