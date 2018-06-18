@@ -1,8 +1,8 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { State } from '../redux/reducer';
-import securePageWrapper from '../hoc/securePageWrapper';
+import { State } from '../src/redux/reducer';
+import securePageWrapper from '../src/hoc/securePageWrapper';
 
 import Helmet from 'react-helmet';
 

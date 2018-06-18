@@ -1,17 +1,17 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import Todo from '../common/Todo';
-import TodoComponent from '../components/TodoComponent';
-import Button from '../components/Button';
+import Todo from '../src/common/Todo';
+import TodoComponent from '../src/components/TodoComponent';
+import Button from '../src/components/Button';
 
 import {
   dispatchSetTitle,
   dispatchSaveTodoSuccess,
   dispatchSetDoneSuccess,
-} from '../redux/module/TodoReducer';
-import { State } from '../redux/reducer';
-import PageWrapper from '../hoc/pageWrapper';
+} from '../src/redux/module/TodoReducer';
+import { State } from '../src/redux/reducer';
+import PageWrapper from '../src/hoc/pageWrapper';
 
 import Helmet from 'react-helmet';
 import i18n from 'i18next';

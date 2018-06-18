@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import * as i18n from 'i18next';
 
-import PureComponent from '../components/PureComponent';
-import ExtendedComponent from '../components/ExtendedComponent';
-import ComponentWithTrans from '../components/ComponentWithTrans';
+import PureComponent from '../src/components/PureComponent';
+import ExtendedComponent from '../src/components/ExtendedComponent';
+import ComponentWithTrans from '../src/components/ComponentWithTrans';
 
-import pageWrapper from '../hoc/pageWrapper';
+import pageWrapper from '../src/hoc/pageWrapper';
 
 export default pageWrapper(['home', 'common'])(({ t }) => {
   return (

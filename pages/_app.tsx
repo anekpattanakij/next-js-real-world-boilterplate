@@ -3,10 +3,10 @@ import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import {createStore} from 'redux';
-import ConfigStore from '../redux/store';
+import ConfigStore from '../src/redux/store';
 
 import withReduxSaga from 'next-redux-saga';
-import createSagaStore from '../redux-saga/store';
+import createSagaStore from '../src/redux-saga/store';
 
 interface IProps {
   store:any;

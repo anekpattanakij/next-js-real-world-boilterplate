@@ -18,10 +18,10 @@ phases:
       - npm run build
 artifacts:
   files:
-    - .next/*
-    - locales/*
+    - .next/**/*
+    - locales/**/*
+    - static/**/*
     - package.json
     - next.config.js
     - tsconfig.json
     - tsconfig.server.json
-  discard-paths: yes

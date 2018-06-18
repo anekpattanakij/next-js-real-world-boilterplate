@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {loadData, startClock, tickClock} from '../redux-saga/actions';
-import Counter from '../components/counter';
+import {loadData, startClock, tickClock} from '../src/redux-saga/actions';
+import Counter from '../src/components/counter';
 
 interface IProps {
     ctx:any;

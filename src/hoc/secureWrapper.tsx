@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import User from '../common/User';
 import { State } from '../redux/reducer';
-import NoAuthorizePage from '../pages/noAuthorize';
+import NoAuthorizePage from '../../pages/noAuthorize';
 
 interface IWithAuthProps {
   loggedOnUser: User;
